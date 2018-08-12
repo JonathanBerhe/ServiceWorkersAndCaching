@@ -1,15 +1,18 @@
 const cache_version = 'v1';
 
 const cache_items = [
-    './img/*.PNG',
-    './js/*.js',
-    './index.html'
+    'js/main.js',
+    'index.html'
 ];
+
+cache_items.forEach(element => {
+    log(element);
+});
 
 
 // Call install event
 self.addEventListener('install', event => {
-    log("Service Worker: Installing .")
+    log("Service Worker: Installing...")
 
     event.waitUntil( preCache() );
 });
