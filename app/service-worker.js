@@ -1,8 +1,9 @@
 const cache_version = 'v1';
 
 const cache_items = [
-    './app/js/main.js',
-    './app/index.html'
+    './img',
+    './js',
+    '-/index.html'
 ];
 
 
@@ -16,7 +17,7 @@ self.addEventListener('install', event => {
 
 // Call fetch event
 self.addEventListener('fetch', e => {
-    
+
     e.respondWith( fromCache(e.request) );
     log("Service Worker: Is serving the assets..");
 
