@@ -1,13 +1,11 @@
 const cache_version = 'v1';
 
 const cache_items = [
+    'img/serviceWorkerCached.PNG',
     'js/main.js',
     'index.html'
 ];
 
-cache_items.forEach(element => {
-    log(element);
-});
 
 
 // Call install event
@@ -33,7 +31,7 @@ self.addEventListener('fetch', e => {
 // f(x) that put items into cache.
 function preCache()
 {
-    return cache.open(cache_version).then(function(cache)
+    return caches.open(cache_version).then(function(cache)
     {
         log("Service Worker: Storing assets into cache..");
 
