@@ -12,7 +12,7 @@ if(navigator.serviceWorker)
 
     window.addEventListener('load', () =>{
         navigator.serviceWorker
-        .register('../../service-worker.js')
+        .register('../service-worker.js')
         .then(reg => print("Service Worker: Registered!"))
         .catch(err => print('Service Worker: error ' + err.toString()))
     })

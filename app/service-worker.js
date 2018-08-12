@@ -16,6 +16,7 @@ self.addEventListener('install', event => {
 
 // Call fetch event
 self.addEventListener('fetch', e => {
+    
     e.respondWith( fromCache(e.request) );
     log("Service Worker: Is serving the assets..");
 
@@ -45,7 +46,7 @@ function fromCache(request)
     {
         log("Service Worker: Taking assets from cache..");
 
-        // Compare actual cache with the request form remote server..
+        // Compare actual cache with the request from remote server..
         return cache.match(request).then(function(matching)
         {
             if(matching !== cache_version) log(`Service Worker: Actual cache ${cache_version} !== request; Clearing old cache..`);
