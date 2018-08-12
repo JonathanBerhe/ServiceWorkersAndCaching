@@ -3,7 +3,7 @@ const cache_version = 'v1';
 const cache_items = [
     './img',
     './js',
-    '-/index.html'
+    './index.html'
 ];
 
 
