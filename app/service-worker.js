@@ -1,8 +1,8 @@
 const cache_version = 'v1';
 
 const cache_items = [
-    'img/*.PNG',
-    'js/*.js',
+    './img/*.PNG',
+    './js/*.js',
     './index.html'
 ];
 
@@ -22,7 +22,7 @@ self.addEventListener('fetch', e => {
     log("Service Worker: Is serving the assets..");
 
     e.waitUntil( updateCache(e.request) );
-    log(`Service Worker: Cache ${cache_version} si updated.`);
+    log(`Service Worker: Cache ${cache_version} is updated.`);
 });
 
 
